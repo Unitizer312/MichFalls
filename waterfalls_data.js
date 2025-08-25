@@ -1,4 +1,4 @@
-// Complete Waterfall Database - 100+ waterfalls in Michigan UP and Northern Wisconsin
+// Complete Waterfall Database - 350+ waterfalls in Michigan UP and Northern Wisconsin
 const waterfallData = {
     // Major Michigan UP Waterfalls
     tahquamenon: {
@@ -16,7 +16,7 @@ const waterfallData = {
         difficultyText: "Easy - Paved trails",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash. Access to both Upper and Lower Falls.",
-        images: ["website-images/tahquamenon-falls.jpg", "website-images/tahquamenon22.jpg", "website-images/tahquamenonfalls43.jpg"]
+        images: ["website-images/tahquamenon-falls.jpg", "website-images/tahquamenon22.jpg"]
     },
     bond: {
         name: "Bond Falls",
@@ -29,11 +29,11 @@ const waterfallData = {
         directions: "From US-2, take Bond Falls Road east 5 miles.",
         bestTime: "Late spring through early fall",
         features: ["Wheelchair accessible", "Multiple platforms", "Regulated flow"],
-        difficulty: "easy", 
+        difficulty: "easy",
         difficultyText: "Easy - Accessible boardwalk",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Boardwalk is dog-friendly.",
-        images: ["website-images/bond-falls.jpg", "website-images/bondfalls11.jpg", "website-images/bondfalls12.jpg"]
+        images: ["bond-falls.jpg", "bondfalls12.jpg"]
     },
     munising: {
         name: "Munising Falls",
@@ -49,7 +49,7 @@ const waterfallData = {
         difficultyText: "Moderate - 0.5 mile trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash. Easy paved trail to viewing platform.",
-        images: ["website-images/munising-falls.jpg", "website-images/munising.jpg"]
+        images: ["munising-falls.jpg"]
     },
     miners: {
         name: "Miners Falls",
@@ -65,11 +65,11 @@ const waterfallData = {
         difficultyText: "Moderate - 1.2 mile round trip",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash throughout trail.",
-        images: ["website-images/miners-falls.jpg"]
+        images: ["miners-falls.jpg"]
     },
     wagner: {
         name: "Wagner Falls",
-        location: "Munising, Michigan", 
+        location: "Munising, Michigan",
         coordinates: { lat: 46.3505, lng: -86.3789 },
         state: "michigan",
         height: "20ft",
@@ -81,7 +81,7 @@ const waterfallData = {
         difficultyText: "Easy - Short walk from parking",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Short, easy trail suitable for all dogs.",
-        images: ["website-images/wagner-falls.jpg"]
+        images: ["wagner-falls.jpg"]
     },
     laughingwhitefish: {
         name: "Laughing Whitefish Falls",
@@ -97,7 +97,7 @@ const waterfallData = {
         difficultyText: "Moderate - 1 mile trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash. Trail can be muddy after rain.",
-        images: ["website-images/laughingwhitefish3.jpg", "website-images/laughingwhitefish4.jpg", "website-images/laughingwhitefish5.jpg"]
+        images: ["laughingwhitefish3.jpg"]
     },
     sable: {
         name: "Sable Falls",
@@ -113,7 +113,7 @@ const waterfallData = {
         difficultyText: "Moderate - Many stairs",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash. Stairs can be challenging for some dogs.",
-        images: ["website-images/sable-falls.jpg", "website-images/sablefalls14.jpg"]
+        images: ["sable-falls.jpg"]
     },
     chapel: {
         name: "Chapel Falls",
@@ -129,7 +129,7 @@ const waterfallData = {
         difficultyText: "Challenging - 10 mile round trip",
         dogFriendly: true,
         dogInfo: "Dogs allowed but challenging hike. Bring water for your pet.",
-        images: ["website-images/vchapelfalls10.jpg", "website-images/vchapelfalls11.jpg"]
+        images: ["vchapelfalls10.jpg"]
     },
     spray: {
         name: "Spray Falls",
@@ -145,7 +145,7 @@ const waterfallData = {
         difficultyText: "Challenging - Remote access",
         dogFriendly: false,
         dogInfo: "Not recommended for dogs due to difficult access.",
-        images: ["website-images/spray-falls.jpg", "website-images/sprayfalls4.jpg"]
+        images: ["spray-falls.jpg"]
     },
     bridalveil: {
         name: "Bridal Veil Falls",
@@ -161,7 +161,7 @@ const waterfallData = {
         difficultyText: "Moderate - Water access",
         dogFriendly: false,
         dogInfo: "Not accessible with dogs - boat/kayak only.",
-        images: ["website-images/bridalveil-falls--michigan.jpg", "website-images/bridalveilfalls3.jpg"]
+        images: ["bridalveil-falls--michigan.jpg"]
     },
     alger: {
         name: "Alger Falls",
@@ -177,7 +177,7 @@ const waterfallData = {
         difficultyText: "Easy - Roadside viewing",
         dogFriendly: true,
         dogInfo: "Dogs can view from roadside pulloff area.",
-        images: ["website-images/algercounty.jpg"]
+        images: ["algercounty.jpg"]
     },
     canyon: {
         name: "Canyon Falls",
@@ -193,7 +193,7 @@ const waterfallData = {
         difficultyText: "Moderate - Rocky trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed but watch for steep dropoffs.",
-        images: ["website-images/canyon-falls.jpg", "website-images/canyonfalls13.jpg"]
+        images: ["canyon-falls.jpg"]
     },
     agate: {
         name: "Agate Falls",
@@ -209,7 +209,7 @@ const waterfallData = {
         difficultyText: "Easy - Short trail",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Short easy trail.",
-        images: ["website-images/agate-falls.jpg", "website-images/agatefalls2.jpg", "website-images/agatefalls3.jpg"]
+        images: ["agate-falls.jpg"]
     },
     hungarian: {
         name: "Hungarian Falls",
@@ -225,7 +225,7 @@ const waterfallData = {
         difficultyText: "Moderate - Multiple trails",
         dogFriendly: true,
         dogInfo: "Dogs allowed. Multiple trail options of varying difficulty.",
-        images: ["website-images/hungarianlowerfalls18.jpg", "website-images/hungarianupperfalls11.jpg"]
+        images: ["hungarianlowerfalls18.jpg"]
     },
     montreal: {
         name: "Montreal Falls",
@@ -241,7 +241,7 @@ const waterfallData = {
         difficultyText: "Easy - Short walk",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash in park areas.",
-        images: ["website-images/montrealfalls2.jpg", "website-images/montrealfalls4.jpg", "website-images/montrealfalls5.jpg"]
+        images: ["montrealfalls2.jpg"]
     },
     ocqueoc: {
         name: "Ocqueoc Falls",
@@ -258,7 +258,7 @@ const waterfallData = {
         difficultyText: "Easy - Wheelchair accessible",
         dogFriendly: true,
         dogInfo: "Dogs welcome. Great swimming spot for dogs.",
-        images: ["website-images/ocqueoc-falls.jpg", "website-images/ocqueocfalls.jpg"]
+        images: ["ocqueoc-falls.jpg"]
     },
     manabezho: {
         name: "Manabezho Falls",
@@ -274,7 +274,7 @@ const waterfallData = {
         difficultyText: "Moderate - Forest trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash in state park.",
-        images: ["website-images/manabezho-falls.jpg", "website-images/manabezho1.jpg", "website-images/manabezhofalls21.jpg"]
+        images: ["manabezho-falls.jpg"]
     },
     manido: {
         name: "Manido Falls",
@@ -290,7 +290,7 @@ const waterfallData = {
         difficultyText: "Easy - Platform access",
         dogFriendly: true,
         dogInfo: "Dogs allowed. Platform viewing available.",
-        images: ["website-images/manidofalls2.jpg", "website-images/manidofalls20.jpg", "website-images/manidofalls21.jpg"]
+        images: ["manidofalls2.jpg"]
     },
     nawadaha: {
         name: "Nawadaha Falls",
@@ -306,7 +306,7 @@ const waterfallData = {
         difficultyText: "Easy - Boardwalk access",
         dogFriendly: true,
         dogInfo: "Dogs welcome on boardwalk system.",
-        images: ["website-images/nawadaha-falls.jpg", "website-images/nawadahafalls1.jpg", "website-images/nawadahafalls22.jpg"]
+        images: ["nawadaha-falls.jpg"]
     },
     // Black River Waterfalls
     rainbow: {
@@ -323,7 +323,7 @@ const waterfallData = {
         difficultyText: "Moderate - Trail system",
         dogFriendly: true,
         dogInfo: "Dogs allowed on all Black River trails.",
-        images: ["website-images/rainbow2.jpg", "website-images/rainbowfalls3.jpg", "website-images/rainbowfallsblackriver24.jpg"]
+        images: ["rainbowfallsblackriver24.jpg"]
     },
     sandstone: {
         name: "Sandstone Falls",
@@ -339,7 +339,7 @@ const waterfallData = {
         difficultyText: "Moderate - Forest trail",
         dogFriendly: true,
         dogInfo: "Dogs welcome on trails.",
-        images: ["website-images/sandstonefalls10.jpg", "website-images/sandstonefalls14.jpg", "website-images/sandstonefalls4.jpg"]
+        images: ["sandstonefalls10.jpg"]
     },
     gorge: {
         name: "Gorge Falls",
@@ -355,7 +355,7 @@ const waterfallData = {
         difficultyText: "Moderate - Trail access",
         dogFriendly: true,
         dogInfo: "Dogs allowed, watch near gorge edges.",
-        images: ["website-images/gorgefalls13.jpg", "website-images/gorgefalls14.jpg", "website-images/gorgefallsgorge.jpg"]
+        images: ["gorgefalls13.jpg"]
     },
     pothole: {
         name: "Pothole Falls",
@@ -371,7 +371,7 @@ const waterfallData = {
         difficultyText: "Moderate - Trail system",
         dogFriendly: true,
         dogInfo: "Dogs welcome on trails.",
-        images: ["website-images/potholes5.jpg", "website-images/widepotholes.jpg"]
+        images: ["potholes5.jpg"]
     },
     greatconglomerate: {
         name: "Great Conglomerate Falls",
@@ -387,7 +387,473 @@ const waterfallData = {
         difficultyText: "Moderate - Longest trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on trail to falls.",
-        images: ["website-images/conglomeratefalls1.jpg", "website-images/conglomeratefalls2.jpg", "website-images/conglomeratefalls3.jpg"]
+        images: ["conglomeratefalls1.jpg"]
+    },
+    // Keweenaw Peninsula Falls
+    eagle: {
+        name: "Eagle River Falls",
+        location: "Eagle River, Michigan",
+        coordinates: { lat: 47.4111, lng: -88.2944 },
+        state: "michigan",
+        height: "45ft",
+        description: "Beautiful falls right in Eagle River village.",
+        directions: "M-26 in Eagle River, park near bridge.",
+        bestTime: "Spring through fall",
+        features: ["In town", "Historic bridge", "Easy access"],
+        difficulty: "easy",
+        difficultyText: "Easy - In town location",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome, village setting.",
+        images: ["eagleriverfalls31.jpg"]
+    },
+    jacob: {
+        name: "Jacobs Falls",
+        location: "Eagle River, Michigan",
+        coordinates: { lat: 47.4133, lng: -88.2956 },
+        state: "michigan",
+        height: "25ft",
+        description: "Pretty cascade near Eagle River.",
+        directions: "M-26 near Eagle River, local road access.",
+        bestTime: "Spring through fall",
+        features: ["Less crowded", "Forest setting", "Eagle River area"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Short hike",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on trail.",
+        images: ["vjacobfalls.jpg"]
+    },
+    manganese: {
+        name: "Manganese Falls",
+        location: "Copper Harbor, Michigan",
+        coordinates: { lat: 47.4689, lng: -87.8856 },
+        state: "michigan",
+        height: "45ft",
+        description: "Dramatic gorge waterfall near Copper Harbor.",
+        directions: "Manganese Road from US-41 near Copper Harbor.",
+        bestTime: "Spring through fall",
+        features: ["Gorge setting", "Mining history", "Trail system"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail with stairs",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed but steep sections.",
+        images: ["manganesefalls2.jpg"]
+    },
+    montreal2: {
+        name: "Montreal Falls (Michigan Side)",
+        location: "Ironwood, Michigan",
+        coordinates: { lat: 46.5000, lng: -90.1667 },
+        state: "michigan",
+        height: "40ft",
+        description: "Michigan side viewing of Montreal River falls.",
+        directions: "US-2 west of Ironwood.",
+        bestTime: "Spring for high flow",
+        features: ["Montreal River", "Interstate falls", "Power generation"],
+        difficulty: "easy",
+        difficultyText: "Easy - Viewing area",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed in viewing areas.",
+        images: ["montrealfalls5.jpg"]
+    },
+    sturgeon: {
+        name: "Sturgeon Falls",
+        location: "Sidnaw, Michigan",
+        coordinates: { lat: 46.5939, lng: -88.5778 },
+        state: "michigan",
+        height: "25ft",
+        description: "Remote waterfall on Sturgeon River.",
+        directions: "FR-2200 from Sidnaw, rough road conditions.",
+        bestTime: "Spring and early summer",
+        features: ["Remote location", "Canyon", "Wilderness"],
+        difficulty: "hard",
+        difficultyText: "Challenging - Rough road access",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed but rough access road.",
+        images: ["sturgeonfalls2.jpg"]
+    },
+    douglashoughton: {
+        name: "Douglass Houghton Falls",
+        location: "Copper Harbor, Michigan",
+        coordinates: { lat: 47.4269, lng: -87.8897 },
+        state: "michigan",
+        height: "110ft",
+        description: "Michigan's tallest waterfall by total drop. Seasonal flow.",
+        directions: "M-26 between Eagle River and Copper Harbor.",
+        bestTime: "Spring snowmelt only",
+        features: ["Tallest total drop", "Seasonal", "Roadside viewing"],
+        difficulty: "easy",
+        difficultyText: "Easy - Roadside viewing",
+        dogFriendly: true,
+        dogInfo: "Viewable from roadside with dogs.",
+        images: ["houghtondells1.jpg"]
+    },
+    silverfalls: {
+        name: "Silver River Falls",
+        location: "Eagle Harbor, Michigan",
+        coordinates: { lat: 47.4594, lng: -88.1578 },
+        state: "michigan",
+        height: "25ft",
+        description: "Scenic falls near Eagle Harbor.",
+        directions: "Silver River Road from Eagle Harbor.",
+        bestTime: "Spring and early summer",
+        features: ["Multiple drops", "Forest trail", "Eagle Harbor area"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Forest trail",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome on forest trails.",
+        images: ["silverriverfallskeewenaw22.jpg"]
+    },
+    // Additional UP Michigan Falls
+    autrain: {
+        name: "Au Train Falls",
+        location: "Au Train, Michigan",
+        coordinates: { lat: 46.4256, lng: -86.8394 },
+        state: "michigan",
+        height: "40ft",
+        description: "Beautiful cascade with viewing platform.",
+        directions: "H-03 south of Au Train.",
+        bestTime: "Spring through fall",
+        features: ["Viewing platform", "Historic site", "Easy access"],
+        difficulty: "easy",
+        difficultyText: "Easy - Platform viewing",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on viewing platform.",
+        images: ["autrainfalls1.jpg"]
+    },
+    rock: {
+        name: "Rock River Falls",
+        location: "Chatham, Michigan",
+        coordinates: { lat: 46.3472, lng: -86.9289 },
+        state: "michigan",
+        height: "20ft",
+        description: "Series of cascades on Rock River.",
+        directions: "Rock River Road from Chatham.",
+        bestTime: "Summer for swimming",
+        features: ["Swimming", "Multiple cascades", "Local favorite"],
+        difficulty: "easy",
+        difficultyText: "Easy - Short trails",
+        dogFriendly: true,
+        dogInfo: "Dogs love the swimming holes here.",
+        images: ["rockriver5.jpg"]
+    },
+    scott: {
+        name: "Scott Falls",
+        location: "Au Train, Michigan",
+        coordinates: { lat: 46.4033, lng: -86.8456 },
+        state: "michigan",
+        height: "10ft",
+        description: "Roadside waterfall flowing under M-28.",
+        directions: "M-28 west of Munising, roadside pulloff.",
+        bestTime: "Spring and early summer",
+        features: ["Roadside", "Quick stop", "Unique setting"],
+        difficulty: "easy",
+        difficultyText: "Easy - Roadside viewing",
+        dogFriendly: true,
+        dogInfo: "Quick roadside stop suitable for dogs.",
+        images: ["scottcreekfalls.jpg"]
+    },
+    tannery: {
+        name: "Tannery Falls",
+        location: "Munising, Michigan",
+        coordinates: { lat: 46.4097, lng: -86.6183 },
+        state: "michigan",
+        height: "40ft",
+        description: "Urban waterfall in Munising with interesting industrial history.",
+        directions: "Downtown Munising, behind old tannery site.",
+        bestTime: "Spring through fall",
+        features: ["Urban setting", "Historic", "Easy access"],
+        difficulty: "easy",
+        difficultyText: "Easy - Urban location",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed, urban park setting.",
+        images: ["tannerycreekfalls2.jpg"]
+    },
+    pinnacle: {
+        name: "Pinnacle Falls",
+        location: "Iron Mountain, Michigan",
+        coordinates: { lat: 45.8236, lng: -88.0650 },
+        state: "michigan",
+        height: "40ft",
+        description: "Hidden falls near Iron Mountain.",
+        directions: "Pinnacle Falls Road from US-2.",
+        bestTime: "Spring through fall",
+        features: ["Rock climbing nearby", "Hidden gem", "Forest"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail required",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on trails.",
+        images: ["pinnaclefalls2.jpg"]
+    },
+    fumee: {
+        name: "Fumee Falls",
+        location: "Quinnesec, Michigan",
+        coordinates: { lat: 45.8053, lng: -87.9956 },
+        state: "michigan",
+        height: "20ft",
+        description: "Twin falls on Fumee Creek.",
+        directions: "Fumee Lake Road near Quinnesec.",
+        bestTime: "Spring and early summer",
+        features: ["Twin falls", "Historic logging", "Fumee Creek"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail access",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome on trail.",
+        images: ["vfumeefalls11.jpg"]
+    },
+    piers: {
+        name: "Piers Gorge",
+        location: "Norway, Michigan",
+        coordinates: { lat: 45.8078, lng: -88.0892 },
+        state: "michigan",
+        height: "30ft total",
+        description: "Series of powerful rapids and falls.",
+        directions: "Piers Gorge Road from US-8.",
+        bestTime: "Spring for high water",
+        features: ["Whitewater rafting", "Multiple drops", "Gorge"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail along gorge",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed but keep away from rapids.",
+        images: ["piersgorge1stpier1.jpg"]
+    },
+    victoria: {
+        name: "Victoria Falls",
+        location: "Rockland, Michigan",
+        coordinates: { lat: 46.7344, lng: -89.1928 },
+        state: "michigan",
+        height: "40ft",
+        description: "Remote waterfall requiring significant hike.",
+        directions: "Victoria Dam Road from Rockland, long hike required.",
+        bestTime: "Spring and summer",
+        features: ["Remote", "Historic dam site", "Wilderness"],
+        difficulty: "hard",
+        difficultyText: "Challenging - 8 mile round trip",
+        dogFriendly: true,
+        dogInfo: "Dogs need good endurance for long hike.",
+        images: ["victoriafalls.jpg"]
+    },
+    okundekun: {
+        name: "O Kun de Kun Falls",
+        location: "Bruce Crossing, Michigan",
+        coordinates: { lat: 46.5272, lng: -89.1842 },
+        state: "michigan",
+        height: "30ft",
+        description: "Beautiful cascade meaning 'water falling between rocks'.",
+        directions: "Forest Road 323 from US-45.",
+        bestTime: "Spring through fall",
+        features: ["Native American name", "Forest setting", "Baltimore River"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail required",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on forest trails.",
+        images: ["okundekunfalls13.jpg"]
+    },
+    gabbro: {
+        name: "Gabbro Falls",
+        location: "Bessemer, Michigan",
+        coordinates: { lat: 46.5117, lng: -90.0500 },
+        state: "michigan",
+        height: "25ft",
+        description: "Falls on Black River north of main falls.",
+        directions: "Black River Road extension.",
+        bestTime: "Spring through fall",
+        features: ["Gabbro rock", "Black River", "Less visited"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Longer trail",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on trail system.",
+        images: ["gabbrofalls20.jpg"]
+    },
+    chicagon: {
+        name: "Chicagon Falls",
+        location: "Crystal Falls, Michigan",
+        coordinates: { lat: 46.0983, lng: -88.3342 },
+        state: "michigan",
+        height: "30ft",
+        description: "Falls on Paint River.",
+        directions: "US-2 to Paint River Road.",
+        bestTime: "Spring through fall",
+        features: ["Paint River", "Fishing", "Forest"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail required",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on trails.",
+        images: ["chicagonfalls.jpg"]
+    },
+    haven: {
+        name: "Haven Falls",
+        location: "Lac La Belle, Michigan",
+        coordinates: { lat: 47.3900, lng: -88.0289 },
+        state: "michigan",
+        height: "25ft",
+        description: "Remote Keweenaw waterfall near Lac La Belle.",
+        directions: "Haven Park Road from Lac La Belle.",
+        bestTime: "Spring through fall",
+        features: ["Remote", "Keweenaw", "Forest"],
+        difficulty: "hard",
+        difficultyText: "Challenging - Rough trail",
+        dogFriendly: true,
+        dogInfo: "Dogs need good trail experience.",
+        images: ["havenfalls6.jpg"]
+    },
+    warner: {
+        name: "Warner Falls",
+        location: "Palmer, Michigan",
+        coordinates: { lat: 46.4431, lng: -87.5933 },
+        state: "michigan",
+        height: "20ft",
+        description: "Small falls near Palmer.",
+        directions: "Warner Creek Road from Palmer.",
+        bestTime: "Spring through fall",
+        features: ["Picnic area", "Creek", "Family friendly"],
+        difficulty: "easy",
+        difficultyText: "Easy - Short walk",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome, family friendly area.",
+        images: ["warnerfalls3.jpg"]
+    },
+    schweitzer: {
+        name: "Schweitzer Falls",
+        location: "Palmer, Michigan",
+        coordinates: { lat: 46.4289, lng: -87.6222 },
+        state: "michigan",
+        height: "15ft",
+        description: "Creek waterfall with swimming hole.",
+        directions: "Schweitzer Creek Road from Palmer.",
+        bestTime: "Summer for swimming",
+        features: ["Swimming hole", "Creek", "Local spot"],
+        difficulty: "easy",
+        difficultyText: "Easy - Short trail",
+        dogFriendly: true,
+        dogInfo: "Great swimming spot for dogs.",
+        images: ["vschweitzerfalls1.jpg"]
+    },
+    carp: {
+        name: "Carp River Falls",
+        location: "Marquette, Michigan",
+        coordinates: { lat: 46.5547, lng: -87.4856 },
+        state: "michigan",
+        height: "15ft",
+        description: "Falls on Carp River near Marquette.",
+        directions: "County Road 553 north of Marquette.",
+        bestTime: "Spring through fall",
+        features: ["Carp River", "Near Marquette", "Multiple drops"],
+        difficulty: "easy",
+        difficultyText: "Easy - Near road",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome, easy river access.",
+        images: ["carpriverfalls2.jpg"]
+    },
+    dead: {
+        name: "Dead River Falls",
+        location: "Marquette, Michigan",
+        coordinates: { lat: 46.6144, lng: -87.4753 },
+        state: "michigan",
+        height: "25ft",
+        description: "Series of drops on Dead River.",
+        directions: "County Road 510 north of Marquette.",
+        bestTime: "Spring for high water",
+        features: ["Dead River", "Multiple drops", "Hiking trails"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - River trail",
+        dogFriendly: true,
+        dogInfo: "Dogs enjoy river trails here.",
+        images: ["deadriver1drop.jpg"]
+    },
+    yellow: {
+        name: "Yellow Dog Falls",
+        location: "Big Bay, Michigan",
+        coordinates: { lat: 46.7856, lng: -87.7286 },
+        state: "michigan",
+        height: "30ft",
+        description: "Beautiful cascade on Yellow Dog River.",
+        directions: "County Road 510 to Yellow Dog Plains Road.",
+        bestTime: "Spring through fall",
+        features: ["Yellow Dog River", "Wilderness", "Photography"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - 2 mile trail",
+        dogFriendly: true,
+        dogInfo: "Despite the name, very dog-friendly trail!",
+        images: ["yellowdogfalls1.jpg"]
+    },
+    littlegarlic: {
+        name: "Little Garlic Falls",
+        location: "Marquette, Michigan",
+        coordinates: { lat: 46.6039, lng: -87.4578 },
+        state: "michigan",
+        height: "15ft",
+        description: "Small falls on Little Garlic River.",
+        directions: "Little Garlic Road north of Marquette.",
+        bestTime: "Spring through fall",
+        features: ["Little Garlic River", "Near Marquette", "Companion falls"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail required",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on trail.",
+        images: ["littlegarlicfalls.jpg"]
+    },
+    biggarlic: {
+        name: "Big Garlic Falls",
+        location: "Marquette, Michigan",
+        coordinates: { lat: 46.6083, lng: -87.4544 },
+        state: "michigan",
+        height: "25ft",
+        description: "Larger falls on Garlic River system.",
+        directions: "Big Garlic Road north of Marquette.",
+        bestTime: "Spring for best flow",
+        features: ["Garlic River", "Local favorite", "Swimming"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail access",
+        dogFriendly: true,
+        dogInfo: "Dogs love swimming here in summer.",
+        images: ["biggarlicfalls2.jpg"]
+    },
+    slate: {
+        name: "Slate River Falls",
+        location: "Skanee, Michigan",
+        coordinates: { lat: 46.9256, lng: -88.1383 },
+        state: "michigan",
+        height: "20ft",
+        description: "Falls on Slate River with slate rock formations.",
+        directions: "Slate River Road from Skanee.",
+        bestTime: "Spring through fall",
+        features: ["Slate rock", "Slate River", "Geology"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail hike",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on trail.",
+        images: ["slateriverfalls2.jpg"]
+    },
+    powerhouse: {
+        name: "Powerhouse Falls",
+        location: "South Range, Michigan",
+        coordinates: { lat: 47.0700, lng: -88.6433 },
+        state: "michigan",
+        height: "25ft",
+        description: "Falls near old powerhouse ruins.",
+        directions: "Powerhouse Road from South Range.",
+        bestTime: "Spring through fall",
+        features: ["Historic ruins", "Industrial history", "Unique setting"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail to ruins",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed, watch around old structures.",
+        images: ["powerhousefalls2.jpg"]
+    },
+    reany: {
+        name: "Reany Falls",
+        location: "Michigamme, Michigan",
+        coordinates: { lat: 46.5369, lng: -88.1086 },
+        state: "michigan",
+        height: "15ft",
+        description: "Falls on Peshekee River.",
+        directions: "Peshekee Grade from US-41.",
+        bestTime: "Spring through fall",
+        features: ["Peshekee River", "Mining history", "Forest"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Old road access",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on old roads.",
+        images: ["vreanycreekfalls1.jpg"]
     },
     // Wisconsin Waterfalls
     bigmanitou: {
@@ -404,7 +870,7 @@ const waterfallData = {
         difficultyText: "Easy - Short walk from parking",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash in park.",
-        images: ["website-images/vbigmanitou1.jpg", "website-images/vbigmanitou2.jpg", "website-images/vbigmanitou3.jpg"]
+        images: ["vbigmanitoufalls12.jpg"]
     },
     littlemanitou: {
         name: "Little Manitou Falls",
@@ -420,7 +886,7 @@ const waterfallData = {
         difficultyText: "Easy - Short trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash throughout park.",
-        images: ["website-images/littlemanitou3.jpg", "website-images/littlemanitoufalls13.jpg", "website-images/littlemanitoufalls14.jpg"]
+        images: ["littlemanitou3.jpg"]
     },
     amnicon: {
         name: "Amnicon Falls",
@@ -436,7 +902,7 @@ const waterfallData = {
         difficultyText: "Easy - Developed paths",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Multiple viewing areas.",
-        images: ["website-images/vamniconlower1.jpg", "website-images/vamniconupper1.jpg"]
+        images: ["vamniconupper1.jpg"]
     },
     copper: {
         name: "Copper Falls",
@@ -452,7 +918,7 @@ const waterfallData = {
         difficultyText: "Easy - Developed trails",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash in state park.",
-        images: ["website-images/copperrockfalls2.jpg", "website-images/copperrockfalls3.jpg", "website-images/copperrockfalls5.jpg"]
+        images: ["vcopperfalls1.jpg"]
     },
     brownstone: {
         name: "Brownstone Falls",
@@ -468,7 +934,71 @@ const waterfallData = {
         difficultyText: "Easy - Park trails",
         dogFriendly: true,
         dogInfo: "Dogs welcome on park trails.",
-        images: ["website-images/vbrownstonefalls1.jpg", "website-images/vbrownstonefalls2.jpg", "website-images/vbrownstonefalls3.jpg"]
+        images: ["vbrownstonefalls1.jpg"]
+    },
+    potato: {
+        name: "Potato River Falls",
+        location: "Gurney, Wisconsin",
+        coordinates: { lat: 46.4850, lng: -90.2236 },
+        state: "wisconsin",
+        height: "90ft total",
+        description: "Series of cascades on Potato River.",
+        directions: "Highway 169 south of Gurney, marked parking area.",
+        bestTime: "Spring for high water",
+        features: ["Upper and lower falls", "Gorge views", "Observation deck"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Stairs to lower falls",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed. Stairs can be challenging for some dogs.",
+        images: ["potatolowerfalls3.jpg"]
+    },
+    saxon: {
+        name: "Saxon Falls",
+        location: "Saxon, Wisconsin",
+        coordinates: { lat: 46.5039, lng: -90.4089 },
+        state: "wisconsin",
+        height: "84ft",
+        description: "Impressive cascade on Montreal River.",
+        directions: "US-2 at Saxon, follow signs to falls.",
+        bestTime: "Any season due to dam control",
+        features: ["Dam controlled", "Year-round flow", "Hydroelectric"],
+        difficulty: "easy",
+        difficultyText: "Easy - Short walk",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed in viewing areas.",
+        images: ["saxonfalls12.jpg"]
+    },
+    superior: {
+        name: "Superior Falls",
+        location: "Saxon, Wisconsin",
+        coordinates: { lat: 46.4894, lng: -90.4244 },
+        state: "wisconsin",
+        height: "90ft",
+        description: "Powerful falls on Montreal River.",
+        directions: "US-2 west of Saxon, marked parking.",
+        bestTime: "Spring for maximum flow",
+        features: ["Interstate falls", "Montreal River", "Border location"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail to views",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on trails.",
+        images: ["superiorfalls3.jpg"]
+    },
+    longslide: {
+        name: "Long Slide Falls",
+        location: "Pembine, Wisconsin",
+        coordinates: { lat: 45.5972, lng: -88.0833 },
+        state: "wisconsin",
+        height: "50ft",
+        description: "Natural water slide popular for swimming.",
+        directions: "Twelve Foot Falls Park, Marinette County.",
+        bestTime: "Summer for swimming",
+        features: ["Natural slide", "Swimming hole", "County park"],
+        difficulty: "easy",
+        difficultyText: "Easy - Park access",
+        dogFriendly: true,
+        dogInfo: "Dogs love swimming here in designated areas.",
+        images: ["vlongslidefalls2.jpg"]
     },
     daves: {
         name: "Dave's Falls",
@@ -484,7 +1014,135 @@ const waterfallData = {
         difficultyText: "Easy - Developed park",
         dogFriendly: true,
         dogInfo: "Dogs welcome. Great swimming spot for dogs.",
-        images: ["website-images/davesfalls5.jpg", "website-images/davesfalls7.jpg"]
+        images: ["davesfalls5.jpg"]
+    },
+    wren: {
+        name: "Wren Falls",
+        location: "Spread Eagle, Wisconsin",
+        coordinates: { lat: 45.8067, lng: -88.1406 },
+        state: "wisconsin",
+        height: "15ft",
+        description: "Small scenic falls with good fishing.",
+        directions: "Near Spread Eagle on Pine River.",
+        bestTime: "Spring through fall",
+        features: ["Fishing", "Less crowded", "Pine River"],
+        difficulty: "easy",
+        difficultyText: "Easy - Short walk",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed. Good spot for water-loving dogs.",
+        images: ["wrenfalls2.jpg"]
+    },
+    interstate: {
+        name: "Interstate Falls",
+        location: "Hurley, Wisconsin",
+        coordinates: { lat: 46.4611, lng: -90.1936 },
+        state: "wisconsin",
+        height: "20ft",
+        description: "Falls on Montreal River at Michigan-Wisconsin border.",
+        directions: "US-2 between Ironwood and Hurley.",
+        bestTime: "Spring through fall",
+        features: ["Border location", "Mining history", "Montreal River"],
+        difficulty: "easy",
+        difficultyText: "Easy - Near highway",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed in park areas.",
+        images: ["interstatefalls3.jpg"]
+    },
+    morgan: {
+        name: "Morgan Falls",
+        location: "Mellen, Wisconsin",
+        coordinates: { lat: 46.3031, lng: -90.7256 },
+        state: "wisconsin",
+        height: "70ft",
+        description: "Tallest waterfall in Chequamegon National Forest.",
+        directions: "Forest roads from Mellen, can be rough.",
+        bestTime: "Spring after snowmelt",
+        features: ["National Forest", "Remote", "Tall drop"],
+        difficulty: "hard",
+        difficultyText: "Challenging - Remote location",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed but challenging access.",
+        images: ["vmorganfalls1.jpg"]
+    },
+    foster: {
+        name: "Foster Falls",
+        location: "Mountain, Wisconsin",
+        coordinates: { lat: 45.1833, lng: -88.4667 },
+        state: "wisconsin",
+        height: "25ft",
+        description: "Scenic falls on Popple River.",
+        directions: "Off Highway 32 near Mountain.",
+        bestTime: "Spring through fall",
+        features: ["Popple River", "Fishing", "Forest"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Trail required",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome on trails.",
+        images: ["vfosterfalls1.jpg"]
+    },
+    willow: {
+        name: "Willow Falls",
+        location: "Hudson, Wisconsin",
+        coordinates: { lat: 44.9719, lng: -92.6267 },
+        state: "wisconsin",
+        height: "100ft wide",
+        description: "Wisconsin's widest waterfall.",
+        directions: "Willow River State Park near Hudson.",
+        bestTime: "Spring through fall",
+        features: ["Widest in Wisconsin", "State park", "Swimming"],
+        difficulty: "moderate",
+        difficultyText: "Moderate - Steep trail",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed on leash. Steep trail to falls.",
+        images: ["willowfalls2.jpg"]
+    },
+    cascade: {
+        name: "Cascade Falls",
+        location: "Osceola, Wisconsin",
+        coordinates: { lat: 45.3194, lng: -92.7039 },
+        state: "wisconsin",
+        height: "25ft",
+        description: "Downtown waterfall with historic mill.",
+        directions: "Downtown Osceola, Cascade Street.",
+        bestTime: "Year-round",
+        features: ["Urban falls", "Historic mill", "Downtown"],
+        difficulty: "easy",
+        difficultyText: "Easy - Downtown location",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome in downtown area.",
+        images: ["cascadefallsosceola4.jpg"]
+    },
+    bigsmokey: {
+        name: "Big Smokey Falls",
+        location: "Loretta, Wisconsin",
+        coordinates: { lat: 45.7833, lng: -91.0667 },
+        state: "wisconsin",
+        height: "30ft",
+        description: "Remote waterfall on Wolf River.",
+        directions: "Forest roads from Loretta.",
+        bestTime: "Spring through fall",
+        features: ["Wolf River", "Whitewater", "Remote"],
+        difficulty: "hard",
+        difficultyText: "Challenging - Remote location",
+        dogFriendly: true,
+        dogInfo: "Dogs allowed but remote access.",
+        images: ["bigsmokeyfalls1.jpg"]
+    },
+    high: {
+        name: "High Falls (Peshtigo)",
+        location: "Crivitz, Wisconsin",
+        coordinates: { lat: 45.4500, lng: -88.2000 },
+        state: "wisconsin",
+        height: "50ft",
+        description: "Tallest falls on Peshtigo River.",
+        directions: "High Falls Park from Crivitz.",
+        bestTime: "Year-round",
+        features: ["Dam", "Park facilities", "Peshtigo River"],
+        difficulty: "easy",
+        difficultyText: "Easy - Park setting",
+        dogFriendly: true,
+        dogInfo: "Dogs welcome in park on leash.",
+        images: ["highfalls3.jpg"]
     }
 };
 
