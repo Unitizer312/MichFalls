@@ -16,7 +16,7 @@ const waterfallData = {
         difficultyText: "Easy - Paved trails",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash. Access to both Upper and Lower Falls.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/tahquamenon-falls.jpg", "website-images/tahquamenon22.jpg", "website-images/tahquamenonfalls43.jpg"]
     },
     bond: {
         name: "Bond Falls",
@@ -33,7 +33,7 @@ const waterfallData = {
         difficultyText: "Easy - Accessible boardwalk",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Boardwalk is dog-friendly.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/bond-falls.jpg", "website-images/bondfalls11.jpg", "website-images/bondfalls12.jpg"]
     },
     munising: {
         name: "Munising Falls",
@@ -49,7 +49,7 @@ const waterfallData = {
         difficultyText: "Moderate - 0.5 mile trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash. Easy paved trail to viewing platform.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/munising-falls.jpg", "website-images/munising.jpg"]
     },
     miners: {
         name: "Miners Falls",
@@ -65,7 +65,7 @@ const waterfallData = {
         difficultyText: "Moderate - 1.2 mile round trip",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash throughout trail.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/miners-falls.jpg"]
     },
     wagner: {
         name: "Wagner Falls",
@@ -81,7 +81,7 @@ const waterfallData = {
         difficultyText: "Easy - Short walk from parking",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Short, easy trail suitable for all dogs.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/wagner-falls.jpg"]
     },
     laughingwhitefish: {
         name: "Laughing Whitefish Falls",
@@ -97,7 +97,7 @@ const waterfallData = {
         difficultyText: "Moderate - 1 mile trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash. Trail can be muddy after rain.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/laughingwhitefish3.jpg", "website-images/laughingwhitefish4.jpg", "website-images/laughingwhitefish5.jpg"]
     },
     sable: {
         name: "Sable Falls",
@@ -113,7 +113,7 @@ const waterfallData = {
         difficultyText: "Moderate - Many stairs",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash. Stairs can be challenging for some dogs.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/sable-falls.jpg", "website-images/sablefalls14.jpg"]
     },
     chapel: {
         name: "Chapel Falls",
@@ -129,7 +129,7 @@ const waterfallData = {
         difficultyText: "Challenging - 10 mile round trip",
         dogFriendly: true,
         dogInfo: "Dogs allowed but challenging hike. Bring water for your pet.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/vchapelfalls10.jpg", "website-images/vchapelfalls11.jpg"]
     },
     spray: {
         name: "Spray Falls",
@@ -145,7 +145,7 @@ const waterfallData = {
         difficultyText: "Challenging - Remote access",
         dogFriendly: false,
         dogInfo: "Not recommended for dogs due to difficult access.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/spray-falls.jpg", "website-images/sprayfalls4.jpg"]
     },
     bridalveil: {
         name: "Bridal Veil Falls",
@@ -161,7 +161,7 @@ const waterfallData = {
         difficultyText: "Moderate - Water access",
         dogFriendly: false,
         dogInfo: "Not accessible with dogs - boat/kayak only.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/bridalveil-falls--michigan.jpg", "website-images/bridalveilfalls3.jpg"]
     },
     alger: {
         name: "Alger Falls",
@@ -177,7 +177,7 @@ const waterfallData = {
         difficultyText: "Easy - Roadside viewing",
         dogFriendly: true,
         dogInfo: "Dogs can view from roadside pulloff area.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/algercounty.jpg"]
     },
     canyon: {
         name: "Canyon Falls",
@@ -193,7 +193,7 @@ const waterfallData = {
         difficultyText: "Moderate - Rocky trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed but watch for steep dropoffs.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/canyon-falls.jpg", "website-images/canyonfalls13.jpg"]
     },
     agate: {
         name: "Agate Falls",
@@ -209,7 +209,7 @@ const waterfallData = {
         difficultyText: "Easy - Short trail",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Short easy trail.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/agate-falls.jpg", "website-images/agatefalls2.jpg", "website-images/agatefalls3.jpg"]
     },
     hungarian: {
         name: "Hungarian Falls",
@@ -225,7 +225,7 @@ const waterfallData = {
         difficultyText: "Moderate - Multiple trails",
         dogFriendly: true,
         dogInfo: "Dogs allowed. Multiple trail options of varying difficulty.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/hungarianlowerfalls18.jpg", "website-images/hungarianupperfalls11.jpg"]
     },
     montreal: {
         name: "Montreal Falls",
@@ -241,7 +241,7 @@ const waterfallData = {
         difficultyText: "Easy - Short walk",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash in park areas.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/montrealfalls2.jpg", "website-images/montrealfalls4.jpg", "website-images/montrealfalls5.jpg"]
     },
     ocqueoc: {
         name: "Ocqueoc Falls",
@@ -258,7 +258,7 @@ const waterfallData = {
         difficultyText: "Easy - Wheelchair accessible",
         dogFriendly: true,
         dogInfo: "Dogs welcome. Great swimming spot for dogs.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/ocqueoc-falls.jpg", "website-images/ocqueocfalls.jpg"]
     },
     manabezho: {
         name: "Manabezho Falls",
@@ -274,7 +274,7 @@ const waterfallData = {
         difficultyText: "Moderate - Forest trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash in state park.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/manabezho-falls.jpg", "website-images/manabezho1.jpg", "website-images/manabezhofalls21.jpg"]
     },
     manido: {
         name: "Manido Falls",
@@ -290,7 +290,7 @@ const waterfallData = {
         difficultyText: "Easy - Platform access",
         dogFriendly: true,
         dogInfo: "Dogs allowed. Platform viewing available.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/manidofalls2.jpg", "website-images/manidofalls20.jpg", "website-images/manidofalls21.jpg"]
     },
     nawadaha: {
         name: "Nawadaha Falls",
@@ -306,7 +306,7 @@ const waterfallData = {
         difficultyText: "Easy - Boardwalk access",
         dogFriendly: true,
         dogInfo: "Dogs welcome on boardwalk system.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/nawadaha-falls.jpg", "website-images/nawadahafalls1.jpg", "website-images/nawadahafalls22.jpg"]
     },
     // Black River Waterfalls
     rainbow: {
@@ -323,7 +323,7 @@ const waterfallData = {
         difficultyText: "Moderate - Trail system",
         dogFriendly: true,
         dogInfo: "Dogs allowed on all Black River trails.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/rainbow2.jpg", "website-images/rainbowfalls3.jpg", "website-images/rainbowfallsblackriver24.jpg"]
     },
     sandstone: {
         name: "Sandstone Falls",
@@ -339,7 +339,7 @@ const waterfallData = {
         difficultyText: "Moderate - Forest trail",
         dogFriendly: true,
         dogInfo: "Dogs welcome on trails.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/sandstonefalls10.jpg", "website-images/sandstonefalls14.jpg", "website-images/sandstonefalls4.jpg"]
     },
     gorge: {
         name: "Gorge Falls",
@@ -355,7 +355,7 @@ const waterfallData = {
         difficultyText: "Moderate - Trail access",
         dogFriendly: true,
         dogInfo: "Dogs allowed, watch near gorge edges.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/gorgefalls13.jpg", "website-images/gorgefalls14.jpg", "website-images/gorgefallsgorge.jpg"]
     },
     pothole: {
         name: "Pothole Falls",
@@ -371,7 +371,7 @@ const waterfallData = {
         difficultyText: "Moderate - Trail system",
         dogFriendly: true,
         dogInfo: "Dogs welcome on trails.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/potholes5.jpg", "website-images/widepotholes.jpg"]
     },
     greatconglomerate: {
         name: "Great Conglomerate Falls",
@@ -387,7 +387,7 @@ const waterfallData = {
         difficultyText: "Moderate - Longest trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on trail to falls.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/conglomeratefalls1.jpg", "website-images/conglomeratefalls2.jpg", "website-images/conglomeratefalls3.jpg"]
     },
     // Wisconsin Waterfalls
     bigmanitou: {
@@ -404,7 +404,7 @@ const waterfallData = {
         difficultyText: "Easy - Short walk from parking",
         dogFriendly: true,
         dogInfo: "Dogs allowed on 6-foot leash in park.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/vbigmanitou1.jpg", "website-images/vbigmanitou2.jpg", "website-images/vbigmanitou3.jpg"]
     },
     littlemanitou: {
         name: "Little Manitou Falls",
@@ -420,7 +420,7 @@ const waterfallData = {
         difficultyText: "Easy - Short trail",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash throughout park.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/littlemanitou3.jpg", "website-images/littlemanitoufalls13.jpg", "website-images/littlemanitoufalls14.jpg"]
     },
     amnicon: {
         name: "Amnicon Falls",
@@ -436,7 +436,7 @@ const waterfallData = {
         difficultyText: "Easy - Developed paths",
         dogFriendly: true,
         dogInfo: "Dogs welcome on leash. Multiple viewing areas.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/vamniconlower1.jpg", "website-images/vamniconupper1.jpg"]
     },
     copper: {
         name: "Copper Falls",
@@ -452,7 +452,7 @@ const waterfallData = {
         difficultyText: "Easy - Developed trails",
         dogFriendly: true,
         dogInfo: "Dogs allowed on leash in state park.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/copperrockfalls2.jpg", "website-images/copperrockfalls3.jpg", "website-images/copperrockfalls5.jpg"]
     },
     brownstone: {
         name: "Brownstone Falls",
@@ -468,7 +468,7 @@ const waterfallData = {
         difficultyText: "Easy - Park trails",
         dogFriendly: true,
         dogInfo: "Dogs welcome on park trails.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/vbrownstonefalls1.jpg", "website-images/vbrownstonefalls2.jpg", "website-images/vbrownstonefalls3.jpg"]
     },
     daves: {
         name: "Dave's Falls",
@@ -484,7 +484,7 @@ const waterfallData = {
         difficultyText: "Easy - Developed park",
         dogFriendly: true,
         dogInfo: "Dogs welcome. Great swimming spot for dogs.",
-        images: ["website-images/placeholder.jpg"]
+        images: ["website-images/davesfalls5.jpg", "website-images/davesfalls7.jpg"]
     }
 };
 
