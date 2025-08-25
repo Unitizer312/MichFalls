@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Waterfalls Explorer - Michigan & Northern Wisconsin</title>
+   
+   <!-- Leaflet CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+   
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       
+       body {
+           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+           line-height: 1.6;
+           color: #333;
+           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           min-height: 100vh;
+       }
+       
+       .container {
+           max-width: 1200px;
+           margin: 0 auto;
+           padding: 0 20px;
+       }
+       
+       header {
+           background: rgba(255, 255, 255, 0.95);
+           backdrop-filter: blur(10px);
+           box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+           position: sticky;
+           top: 0;
+           z-index: 100;
+       }
+       
+       .header-content {
+           padding: 1rem 0;
+           text-align: center;
+       }
+       
+       h1 {
+           color: #2c3e50;
+           font-size: 1.8rem;
+           margin-bottom: 0.5rem;
+           font-weight: 700;
+       }
+       
+       .subtitle {
+           color: #7f8c8d;
+           font-size: 1rem;
+           margin-bottom: 1rem;
+       }
+       
+       .nav-buttons {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 0.5rem;
+           justify-content: center;
+           margin-top: 1rem;
+       }
+       
+       .nav-btn {
+           background: #3498db;
+           color: white;
+           border: none;
+           padding: 0.5rem 1rem;
+           border-radius: 25px;
+           cursor: pointer;
+           font-size: 0.9rem;
+           transition: all 0.3s ease;
+       }
+       
+       .nav-btn:hover, .nav-btn.active {
+           background: #2980b9;
+           transform: translateY(-2px);
+       }
+       
+       .location-btn {
+           background: #27ae60;
+       }
+       
+       .location-btn:hover {
+           background: #229954;
+       }
+       
+       .map-btn {
+           background: #e74c3c;
+       }
+       
+       .map-btn:hover {
+           background: #c0392b;
+       }
+       
+       .dog-btn {
+           background: #9b59b6;
+       }
+       
+       .dog-btn:hover {
+           background: #8e44ad;
+       }
+       
+       .search-container {
+           margin: 1rem 0;
+       }
+       
+       .search-input {
+           width: 100%;
+           padding: 0.75rem 1rem;
+           border: 2px solid #ddd;
+           border-radius: 25px;
+           font-size: 1rem;
+           outline: none;
+           transition: border-color 0.3s ease;
+       }
+       
+       .search-input:focus {
+           border-color: #3498db;
+       }
+       
+       .location-status {
+           text-align: center;
+           padding: 0.5rem;
+           margin: 0.5rem 0;
+           background: rgba(52, 152, 219, 0.1);
+           border-radius: 10px;
+           color: #2c3e50;
+           font-size: 0.9rem;
+       }
+       
+       #map {
+           height: 500px;
+           width: 100%;
+           border-radius: 15px;
+           margin: 2rem 0;
+           display: none;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+       }
+       
+       #map.show {
+           display: block;
+       }
+       
+       main {
+           padding: 2rem 0;
+       }
+       
+       .falls-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+           gap: 1.5rem;
+           margin-top: 2rem;
+       }
+       
+       .fall-card {
+           background: white;
+           border-radius: 15px;
+           overflow: hidden;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+           transition: all 0.3s ease;
+           cursor: pointer;
+           position: relative;
+       }
+       
+       .fall-card:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+       }
+       
+       .distance-badge {
+           position: absolute;
+           top: 10px;
+           right: 10px;
+           background: rgba(255, 255, 255, 0.95);
+           color: #2c3e50;
+           padding: 0.3rem 0.6rem;
+           border-radius: 20px;
+           font-size: 0.8rem;
+           font-weight: bold;
+           z-index: 5;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+       }
+       
+       .dog-friendly-badge {
+           position: absolute;
+           top: 10px;
+           left: 10px;
+           background: rgba(155, 89, 182, 0.95);
+           color: white;
+           padding: 0.3rem 0.6rem;
+           border-radius: 20px;
+           font-size: 0.8rem;
+           font-weight: bold;
+           z-index: 5;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+       }
+       
+       .fall-image {
+           width: 100%;
+           height: 200px;
+           position: relative;
+           overflow: hidden;
+           background: linear-gradient(45deg, #74b9ff, #0984e3);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: white;
+           font-size: 1rem;
+       }
+       
+       .fall-image img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: transform 0.3s ease;
+           position: absolute;
+           top: 0;
+           left: 0;
+       }
+       
+       .fall-image:hover img {
+           transform: scale(1.1);
+       }
+       
+       .image-overlay {
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           right: 0;
+           background: linear-gradient(transparent, rgba(0,0,0,0.7));
+           color: white;
+           padding: 1rem;
+           font-size: 0.9rem;
+           opacity: 0;
+           transition: opacity 0.3s ease;
+           z-index: 2;
+       }
+       
+       .fall-image:hover .image-overlay {
+           opacity: 1;
+       }
+       
+       .image-placeholder {
+           z-index: 1;
+       }
+       
+       .fall-content {
+           padding: 1.5rem;
+       }
+       
+       .fall-name {
+           font-size: 1.3rem;
+           font-weight: 600;
+           color: #2c3e50;
+           margin-bottom: 0.5rem;
+       }
+       
+       .fall-location {
+           color: #7f8c8d;
+           margin-bottom: 0.5rem;
+           font-size: 0.9rem;
+       }
+       
+       .coordinates {
+           color: #95a5a6;
+           font-size: 0.8rem;
+           margin-bottom: 0.5rem;
+       }
+       
+       .fall-stats {
+           display: flex;
+           gap: 1rem;
+           margin: 0.75rem 0;
+           flex-wrap: wrap;
+       }
+       
+       .stat {
+           background: #ecf0f1;
+           padding: 0.3rem 0.6rem;
+           border-radius: 12px;
+           font-size: 0.8rem;
+           color: #2c3e50;
+       }
+       
+       .fall-description {
+           color: #34495e;
+           font-size: 0.9rem;
+           line-height: 1.5;
+           margin-bottom: 1rem;
+       }
+       
+       .accessibility-info {
+           display: flex;
+           gap: 0.5rem;
+           margin-bottom: 1rem;
+           flex-wrap: wrap;
+       }
+       
+       .accessibility-badge {
+           background: #27ae60;
+           color: white;
+           padding: 0.2rem 0.5rem;
+           border-radius: 8px;
+           font-size: 0.7rem;
+       }
+       
+       .difficulty-easy { background: #27ae60; }
+       .difficulty-moderate { background: #f39c12; }
+       .difficulty-hard { background: #e74c3c; }
+       
+       .action-buttons {
+           display: flex;
+           gap: 0.5rem;
+       }
+       
+       .view-details, .directions-btn {
+           border: none;
+           padding: 0.6rem 1.2rem;
+           border-radius: 8px;
+           cursor: pointer;
+           font-size: 0.9rem;
+           flex: 1;
+           transition: background 0.3s ease;
+       }
+       
+       .view-details {
+           background: #3498db;
+           color: white;
+       }
+       
+       .view-details:hover {
+           background: #2980b9;
+       }
+       
+       .directions-btn {
+           background: #27ae60;
+           color: white;
+       }
+       
+       .directions-btn:hover {
+           background: #229954;
+       }
+       
+       .modal {
+           display: none;
+           position: fixed;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: rgba(0, 0, 0, 0.8);
+           z-index: 1000;
+           overflow-y: auto;
+       }
+       
+       .modal-content {
+           background: white;
+           margin: 2rem auto;
+           padding: 0;
+           border-radius: 15px;
+           max-width: 600px;
+           max-height: 90vh;
+           overflow-y: auto;
+           position: relative;
+       }
+       
+       .modal-header {
+           padding: 1.5rem;
+           border-bottom: 1px solid #eee;
+           position: sticky;
+           top: 0;
+           background: white;
+           z-index: 10;
+       }
+       
+       .modal-body {
+           padding: 1.5rem;
+       }
+       
+       .close {
+           position: absolute;
+           right: 1rem;
+           top: 1rem;
+           background: none;
+           border: none;
+           font-size: 1.5rem;
+           cursor: pointer;
+           color: #7f8c8d;
+       }
+       
+       .gallery {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+           gap: 0.5rem;
+           margin: 1rem 0;
+       }
+       
+       .gallery-img {
+           width: 100%;
+           height: 120px;
+           border-radius: 8px;
+           overflow: hidden;
+           position: relative;
+           cursor: pointer;
+           background: linear-gradient(45deg, #74b9ff, #0984e3);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: white;
+           font-size: 0.8rem;
+       }
+       
+       .gallery-img img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: transform 0.3s ease;
+           position: absolute;
+           top: 0;
+           left: 0;
+       }
+       
+       .gallery-img:hover img {
+           transform: scale(1.1);
+       }
+       
+       .stats-overview {
+           background: rgba(255, 255, 255, 0.95);
+           padding: 1.5rem;
+           border-radius: 15px;
+           margin-bottom: 2rem;
+           text-align: center;
+       }
+       
+       .stats-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+           gap: 1rem;
+           margin-top: 1rem;
+       }
+       
+       .stat-box {
+           text-align: center;
+       }
+       
+       .stat-number {
+           font-size: 2rem;
+           font-weight: bold;
+           color: #3498db;
+       }
+       
+       .stat-label {
+           color: #7f8c8d;
+           font-size: 0.9rem;
+       }
+       
+       .region-title {
+           font-size: 1.5rem;
+           color: white;
+           margin-bottom: 1rem;
+           text-align: center;
+           text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+       }
+       
+       footer {
+           background: rgba(0, 0, 0, 0.8);
+           color: white;
+           text-align: center;
+           padding: 2rem 0;
+           margin-top: 3rem;
+       }
+       
+       .popup-content {
+           text-align: center;
+       }
+       
+       .popup-title {
+           font-weight: bold;
+           margin-bottom: 5px;
+       }
+       
+       .popup-button {
+           display: inline-block;
+           margin-top: 10px;
+           padding: 5px 10px;
+           background: #3498db;
+           color: white;
+           border-radius: 5px;
+           text-decoration: none;
+           font-size: 0.9rem;
+       }
+       
+       .dog-info {
+           background: #f8f3ff;
+           padding: 0.75rem;
+           border-radius: 8px;
+           margin: 1rem 0;
+           border-left: 4px solid #9b59b6;
+       }
+       
+       .dog-info-title {
+           font-weight: bold;
+           color: #8e44ad;
+           margin-bottom: 0.25rem;
+       }
+       
+       .dog-info-text {
+           color: #34495e;
+           font-size: 0.9rem;
+       }
+       
+       @media (max-width: 768px) {
+           .container {
+               padding: 0 15px;
+           }
+           
+           h1 {
+               font-size: 1.5rem;
+           }
+           
+           .falls-grid {
+               grid-template-columns: 1fr;
+           }
+           
+           .nav-buttons {
+               gap: 0.3rem;
+           }
+           
+           .nav-btn {
+               padding: 0.4rem 0.8rem;
+               font-size: 0.8rem;
+           }
+           
+           .modal-content {
+               margin: 1rem;
+               max-width: calc(100% - 2rem);
+           }
+           
+           #map {
+               height: 400px;
+           }
+       }
+   </style>
+</head>
+<body>
+   <header>
+       <div class="container">
+           <div class="header-content">
+               <h1>🏔️ Waterfalls Explorer</h1>
+               <p class="subtitle">Discover the stunning waterfalls of Michigan & Northern Wisconsin</p>
+               
+               <div class="search-container">
+                   <input type="text" class="search-input" placeholder="Search waterfalls..." id="searchInput">
+               </div>
+               
+               <div class="location-status" id="locationStatus" style="display: none;"></div>
+               
+               <div class="nav-buttons">
+                   <button class="nav-btn active" onclick="filterByState('all', event)">All Falls</button>
+                   <button class="nav-btn" onclick="filterByState('michigan', event)">Michigan</button>
+                   <button class="nav-btn" onclick="filterByState('wisconsin', event)">Wisconsin</button>
+                   <button class="nav-btn" onclick="filterByDifficulty('easy', event)">Easy Access</button>
+                   <button class="nav-btn" onclick="filterByDifficulty('moderate', event)">Moderate Hike</button>
+                   <button class="nav-btn dog-btn" onclick="filterDogFriendly(event)">🐕 Dog Friendly</button>
+                   <button class="nav-btn location-btn" onclick="sortByDistance(event)">📍 Sort by Distance</button>
+                   <button class="nav-btn map-btn" onclick="toggleMap(event)">🗺️ Map View</button>
+               </div>
+           </div>
+       </div>
+   </header>
+
+   <main>
+       <div class="container">
+           <div id="map"></div>
+           
+           <div class="stats-overview">
+               <h2>Waterfall Statistics</h2>
+               <div class="stats-grid">
+                   <div class="stat-box">
+                       <div class="stat-number">100+</div>
+                       <div class="stat-label">Michigan Waterfalls</div>
+                   </div>
+                   <div class="stat-box">
+                       <div class="stat-number">30+</div>
+                       <div class="stat-label">Wisconsin Waterfalls</div>
+                   </div>
+                   <div class="stat-box">
+                       <div class="stat-number">165ft</div>
+                       <div class="stat-label">Tallest (Big Manitou)</div>
+                   </div>
+                   <div class="stat-box">
+                       <div class="stat-number" id="nearestDistance">--</div>
+                       <div class="stat-label">Nearest Waterfall</div>
+                   </div>
+               </div>
+           </div>
+
+           <section>
+               <h2 class="region-title">Featured Waterfalls</h2>
+               <div class="falls-grid" id="fallsGrid"></div>
+           </section>
+       </div>
+   </main>
+
+   <div id="waterfallModal" class="modal">
+       <div class="modal-content">
+           <div class="modal-header">
+               <button class="close" onclick="closeModal()">&times;</button>
+               <h2 id="modalTitle">Waterfall Details</h2>
+           </div>
+           <div class="modal-body">
+               <div id="modalContent"></div>
+           </div>
+       </div>
+   </div>
+
+   <footer>
+       <div class="container">
+           <p>&copy; 2024 Michigan & Wisconsin Waterfalls Explorer</p>
+           <p>Discover nature's beauty responsibly - Leave No Trace</p>
+       </div>
+   </footer>
+
+   <!-- Leaflet JS -->
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+   
+   <!-- Load the complete waterfalls database -->
+   <script src="waterfalls_data.js"></script>
+   
+   <script>
+       // Global variables
+       let userLocation = null;
+       let map = null;
+       let markers = [];
+       
+       // waterfallData is now loaded from external waterfalls_data.js file
+       // Contains 100+ waterfalls from Michigan UP and Northern Wisconsin
+
+       // Global functions for onclick handlers - Define these before they're used
+       window.filterByState = function(state, evt) {
+           const cards = document.querySelectorAll('.fall-card');
+           const buttons = document.querySelectorAll('.nav-btn');
+           
+           buttons.forEach(btn => btn.classList.remove('active'));
+           if (evt && evt.target) {
+               evt.target.classList.add('active');
+           }
+           
+           cards.forEach(card => {
+               card.style.display = (state === 'all' || card.dataset.state === state) ? 'block' : 'none';
+           });
+       }
+
+       window.filterByDifficulty = function(difficulty, evt) {
+           const cards = document.querySelectorAll('.fall-card');
+           const buttons = document.querySelectorAll('.nav-btn');
+           
+           buttons.forEach(btn => btn.classList.remove('active'));
+           if (evt && evt.target) {
+               evt.target.classList.add('active');
+           }
+           
+           cards.forEach(card => {
+               card.style.display = (card.dataset.difficulty === difficulty) ? 'block' : 'none';
+           });
+       }
+
+       window.filterDogFriendly = function(evt) {
+           const cards = document.querySelectorAll('.fall-card');
+           const buttons = document.querySelectorAll('.nav-btn');
+           
+           buttons.forEach(btn => btn.classList.remove('active'));
+           if (evt && evt.target) {
+               evt.target.classList.add('active');
+           }
+           
+           cards.forEach(card => {
+               card.style.display = (card.dataset.dogFriendly === 'true') ? 'block' : 'none';
+           });
+       }
+
+       window.sortByDistance = function(evt) {
+           const statusElement = document.getElementById('locationStatus');
+           statusElement.style.display = 'block';
+           statusElement.textContent = '📍 Getting your location...';
+
+           if (navigator.geolocation) {
+               navigator.geolocation.getCurrentPosition(
+                   (position) => {
+                       userLocation = {
+                           lat: position.coords.latitude,
+                           lng: position.coords.longitude
+                       };
+                       
+                       statusElement.textContent = `📍 Location found! Sorting by distance from your location.`;
+                       
+                       const waterfallsWithDistance = Object.entries(waterfallData).map(([key, fall]) => {
+                           const distance = calculateDistance(
+                               userLocation.lat, 
+                               userLocation.lng,
+                               fall.coordinates.lat,
+                               fall.coordinates.lng
+                           );
+                           return [key, { ...fall, distance: distance.toFixed(1) }];
+                       });
+                       
+                       waterfallsWithDistance.sort((a, b) => parseFloat(a[1].distance) - parseFloat(b[1].distance));
+                       
+                       document.getElementById('nearestDistance').textContent = 
+                           waterfallsWithDistance[0][1].distance + ' mi';
+                       
+                       renderWaterfalls(waterfallsWithDistance);
+                       
+                       setTimeout(() => {
+                           statusElement.style.display = 'none';
+                       }, 3000);
+                   },
+                   (error) => {
+                       statusElement.textContent = '📍 Location access denied. Showing default order.';
+                       setTimeout(() => {
+                           statusElement.style.display = 'none';
+                       }, 3000);
+                   }
+               );
+           } else {
+               statusElement.textContent = '📍 Geolocation not supported by your browser.';
+               setTimeout(() => {
+                   statusElement.style.display = 'none';
+               }, 3000);
+           }
+       }
+
+       window.toggleMap = function(evt) {
+           const mapElement = document.getElementById('map');
+           if (!mapElement) return;
+           
+           mapElement.classList.toggle('show');
+           
+           if (mapElement.classList.contains('show') && map) {
+               setTimeout(() => {
+                   map.invalidateSize();
+                   
+                   if (userLocation) {
+                       map.setView([userLocation.lat, userLocation.lng], 8);
+                       
+                       L.marker([userLocation.lat, userLocation.lng], {
+                           icon: L.divIcon({
+                               className: 'user-location',
+                               html: '<div style="background: #3498db; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>'
+                           })
+                       }).addTo(map).bindPopup('Your Location');
+                   }
+               }, 100);
+           }
+       }
+
+       window.getDirections = function(lat, lng) {
+           const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+           window.open(url, '_blank');
+       }
+
+       window.openModal = function(waterfallId) {
+           const modal = document.getElementById('waterfallModal');
+           const modalTitle = document.getElementById('modalTitle');
+           const modalContent = document.getElementById('modalContent');
+           const data = waterfallData[waterfallId];
+           
+           if (data) {
+               modalTitle.textContent = data.name;
+               modalContent.innerHTML = `
+                   <div class="gallery">
+                       ${data.images.map(img => `
+                           <div class="gallery-img">
+                               <span class="image-placeholder">📷 ${data.name}</span>
+                               <img src="${img}" alt="${data.name}" loading="lazy" onerror="this.style.display='none'">
+                           </div>
+                       `).join('')}
+                   </div>
+                   
+                   <h3>About ${data.name}</h3>
+                   <p><strong>Location:</strong> ${data.location}</p>
+                   <p><strong>Coordinates:</strong> ${data.coordinates.lat.toFixed(4)}, ${data.coordinates.lng.toFixed(4)}</p>
+                   <p><strong>Height:</strong> ${data.height}</p>
+                   ${data.width ? `<p><strong>Width:</strong> ${data.width}</p>` : ''}
+                   <p><strong>Difficulty:</strong> ${data.difficultyText}</p>
+                   
+                   <div class="dog-info">
+                       <div class="dog-info-title">🐕 Dogs Allowed:</div>
+                       <div class="dog-info-text">${data.dogInfo}</div>
+                   </div>
+                   
+                   <h4>Description</h4>
+                   <p>${data.description}</p>
+                   
+                   <h4>Getting There</h4>
+                   <p>${data.directions}</p>
+                   
+                   <h4>Best Time to Visit</h4>
+                   <p>${data.bestTime}</p>
+                   
+                   <h4>Key Features</h4>
+                   <ul>
+                       ${data.features.map(feature => `<li>${feature}</li>`).join('')}
+                   </ul>
+                   
+                   <div style="margin-top: 1.5rem;">
+                       <button class="directions-btn" style="width: 100%;" onclick="getDirections(${data.coordinates.lat}, ${data.coordinates.lng})">
+                           📍 Get Directions
+                       </button>
+                   </div>
+               `;
+               
+               modal.style.display = 'block';
+               document.body.style.overflow = 'hidden';
+           }
+       }
+
+       window.closeModal = function() {
+           document.getElementById('waterfallModal').style.display = 'none';
+           document.body.style.overflow = 'auto';
+       }
+
+       // Helper functions
+       function calculateDistance(lat1, lon1, lat2, lon2) {
+           const R = 3959;
+           const dLat = toRad(lat2 - lat1);
+           const dLon = toRad(lon2 - lon1);
+           const a = 
+               Math.sin(dLat/2) * Math.sin(dLat/2) +
+               Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * 
+               Math.sin(dLon/2) * Math.sin(dLon/2);
+           const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+           return R * c;
+       }
+
+       function toRad(deg) {
+           return deg * (Math.PI/180);
+       }
+
+       function renderWaterfalls(sortedData = null) {
+           const fallsGrid = document.getElementById('fallsGrid');
+           const dataToRender = sortedData || Object.entries(waterfallData);
+           
+           fallsGrid.innerHTML = dataToRender.map(([key, fall]) => `
+               <div class="fall-card" data-state="${fall.state}" data-difficulty="${fall.difficulty}" data-key="${key}" data-dog-friendly="${fall.dogFriendly}">
+                   ${fall.distance ? `<div class="distance-badge">${fall.distance} mi</div>` : ''}
+                   ${fall.dogFriendly ? `<div class="dog-friendly-badge">🐕 Dog Friendly</div>` : ''}
+                   <div class="fall-image">
+                       <span class="image-placeholder">📸 ${fall.name}</span>
+                       <img src="${fall.images[0]}" alt="${fall.name}" loading="lazy" onerror="this.style.display='none'">
+                       <div class="image-overlay">View Gallery</div>
+                   </div>
+                   <div class="fall-content">
+                       <h3 class="fall-name">${fall.name}</h3>
+                       <p class="fall-location">${fall.location}</p>
+                       <p class="coordinates">📍 ${fall.coordinates.lat.toFixed(4)}, ${fall.coordinates.lng.toFixed(4)}</p>
+                       <div class="fall-stats">
+                           <span class="stat">Height: ${fall.height}</span>
+                           ${fall.width ? `<span class="stat">Width: ${fall.width}</span>` : ''}
+                       </div>
+                       <div class="accessibility-info">
+                           <span class="accessibility-badge difficulty-${fall.difficulty}">${fall.difficultyText.split(' - ')[0]}</span>
+                           ${fall.features.slice(0, 2).map(f => `<span class="accessibility-badge">${f}</span>`).join('')}
+                       </div>
+                       <p class="fall-description">${fall.description.substring(0, 100)}...</p>
+                       <div class="action-buttons">
+                           <button class="view-details" onclick="openModal('${key}')">View Details</button>
+                           <button class="directions-btn" onclick="getDirections(${fall.coordinates.lat}, ${fall.coordinates.lng})">📍 Directions</button>
+                       </div>
+                   </div>
+               </div>
+           `).join('');
+       }
+
+       function initializeMap() {
+           try {
+               if (typeof L === 'undefined') {
+                   console.error('Leaflet library not loaded.');
+                   return;
+               }
+               
+               const mapElement = document.getElementById('map');
+               if (!mapElement) {
+                   console.error('Map element not found');
+                   return;
+               }
+               
+               map = L.map('map').setView([45.5, -87.5], 6);
+               
+               L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                   attribution: '© OpenStreetMap contributors'
+               }).addTo(map);
+
+               Object.entries(waterfallData).forEach(([key, fall]) => {
+                   const dogIcon = fall.dogFriendly ? '🐕 ' : '';
+                   const marker = L.marker([fall.coordinates.lat, fall.coordinates.lng])
+                       .bindPopup(`
+                           <div class="popup-content">
+                               <div class="popup-title">${dogIcon}${fall.name}</div>
+                               <div>${fall.location}</div>
+                               <div>Height: ${fall.height}</div>
+                               <a href="#" class="popup-button" onclick="openModal('${key}'); return false;">View Details</a>
+                           </div>
+                       `);
+                   markers.push(marker);
+                   marker.addTo(map);
+               });
+           } catch (error) {
+               console.error('Error initializing map:', error);
+           }
+       }
+
+       function setupEventListeners() {
+           document.getElementById('searchInput').addEventListener('input', function() {
+               const searchTerm = this.value.toLowerCase();
+               const cards = document.querySelectorAll('.fall-card');
+               
+               cards.forEach(card => {
+                   const name = card.querySelector('.fall-name').textContent.toLowerCase();
+                   const location = card.querySelector('.fall-location').textContent.toLowerCase();
+                   
+                   if (name.includes(searchTerm) || location.includes(searchTerm)) {
+                       card.style.display = 'block';
+                   } else {
+                       card.style.display = 'none';
+                   }
+               });
+           });
+
+           window.onclick = function(event) {
+               const modal = document.getElementById('waterfallModal');
+               if (event.target === modal) {
+                   closeModal();
+               }
+           }
+
+           document.addEventListener('keydown', function(event) {
+               if (event.key === 'Escape') {
+                   closeModal();
+               }
+           });
+       }
+
+       // Initialize page when DOM is ready
+       document.addEventListener('DOMContentLoaded', function() {
+           renderWaterfalls();
+           setTimeout(initializeMap, 100);
+           setupEventListeners();
+       });
+
+       // Error handling for images
+       window.addEventListener('error', function(e) {
+           if (e.target.tagName === 'IMG') {
+               console.log('Image failed to load:', e.target.src);
+           }
+       }, true);
+   </script>
+</body>
+</html>
